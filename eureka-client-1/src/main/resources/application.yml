@@ -1,0 +1,13 @@
+server:
+  context-path: /client-one
+  port: 8001
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8080/eureka
+  instance:
+    statusPageUrlPath: ${server.context-path}/info
+    healthCheckUrlPath: ${server.context-path}/health
+spring:
+  application:
+    name: client-one
